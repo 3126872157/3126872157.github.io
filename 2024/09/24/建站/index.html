@@ -13,7 +13,7 @@
   
   <title>
     
-      linux下玩v831 
+      建站记录 
       
       
       |
@@ -153,22 +153,50 @@
   <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
   <div class="container post-details" id="post-details">
     <div class="post-content">
-      <div class="post-title">linux下玩v831</div>
+      <div class="post-title">建站记录</div>
       <div class="post-attach">
         <span class="post-pubtime">
           <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
-          2024-09-17 14:37:11
+          2024-09-24 11:38:27
         </span>
         
+              <span class="post-categories">
+                <i class="iconfont icon-bookmark" title="分类"></i>
+                
+                <span class="span--category">
+                  <a href="/categories/web/" title="web">
+                    <b>#</b> web
+                  </a>
+                </span>
+                
+              </span>
+          
       </div>
       <div class="markdown-body">
-        
+        <h1 id="关于建站"><a href="#关于建站" class="headerlink" title="关于建站"></a>关于建站</h1><p>早有建站想法，最近趁着中秋，实现了这个想法。<br>一开始看别人博客教程的时候，对建站的过程不明就里。现在初步搭好了，我来回顾一下。</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>架设自己的个人网站的思路其实非常简单，从下往上的步骤大概是这样：</p>
+<ul>
+<li>自己先用<a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/">markdown</a>写好博客的内容；</li>
+<li>再使用一个框架帮你自动实现网站的架构（像<a target="_blank" rel="noopener" href="https://hexo.io/themes/">主题</a>，背景，导航栏，特效等等），这个框架负责把你写的内容呈现出来（到这时自己已经可以在本地预览到自己网站的样子了）；</li>
+<li>网站成型后，考虑的是怎么让别人通过网络来访问你的网站了，其中一个方法是使用Github的<a target="_blank" rel="noopener" href="https://pages.github.com/">Pages</a>功能来托管，即把网页文件上传到Github仓库里，别人就可以访问仓库网址看到你的网站了；</li>
+<li>进阶一点的就是架设一个服务器，使用一个好看的域名来登录的网站,就可以摆脱Github来发布，毕竟经常又慢又打不开。</li>
+</ul>
+<h2 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h2><p>框架我所知的有<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">hexo</a>，WordPress，hugo。<br>hexo和WordPress的教程在csdn都非常多，当时不用hugo是因为找不到一个好看的主题。</p>
+<h2 id="Github托管"><a href="#Github托管" class="headerlink" title="Github托管"></a>Github托管</h2><p>使用Github的pages功能非常方便，只要上传自己博客网页相关的文件，访问用户名.github.io的网站就可以看到了。</p>
+<h2 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h2><p>我用的是阿里云的ECS云服务器，有3个月的免费试用；加上7块钱买了一个域名，解析到我的服务器ip。<br>这里踩了几个坑，耽搁了很久：</p>
+<ul>
+<li>域名解析：一开始我是将域名解析到Github Pages那里，但是无论如何也登不上。方法是，先去实名认证。</li>
+<li>hexo的git自动部署功能：_config.yml文件里的deploy那里的repo最好直接用ssh的地址，而非用域名；原因是当你域名没解析好，端口没打开或者设置错了的时候，也能保证传的上去。</li>
+<li>安全组：使用宝塔面板的端口一般是8080，但我的恰好不是，而且安全组里添加了相应端口也没用。原因是安全组要和相应实例关联，意思是我开的服务器，得刷新一下，从实例那里进去打开安全组，编辑即可。</li>
+<li>部署好了访问服务器ip却404：这是宝塔的设置出现问题，配置文件里，listen 80后面要加上default_server，要不然访问时不会自动进这个端口，导致404。这个修改很多教程没框出来，我是靠运气看到的，害。</li>
+</ul>
+
       </div>
       
         <div class="prev-or-next">
           <div class="post-foot-next">
             
-              <a href="/2024/09/17/%E8%A3%85ubuntu%E7%B3%BB%E7%BB%9F%E8%AE%B0%E5%BD%95/" target="_self">
+              <a href="/2024/09/17/hello-world/" target="_self">
                 <i class="iconfont icon-chevronleft"></i>
                 <span>上一页</span>
               </a>
@@ -177,13 +205,24 @@
           <div class="post-attach">
             <span class="post-pubtime">
               <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
-              2024-09-17 14:37:11
+              2024-09-24 11:38:27
             </span>
             
+                  <span class="post-categories">
+                    <i class="iconfont icon-bookmark" title="分类"></i>
+                    
+                    <span class="span--category">
+                      <a href="/categories/web/" title="web">
+                        <b>#</b> web
+                      </a>
+                    </span>
+                    
+                  </span>
+              
           </div>
           <div class="post-foot-prev">
             
-              <a href="/2024/09/17/hello-world/" target="_self">
+              <a href="/2024/09/24/%E8%A3%85ubuntu%E7%B3%BB%E7%BB%9F%E8%AE%B0%E5%BD%95/" target="_self">
                 <span>下一页</span>
                 <i class="iconfont icon-chevronright"></i>
               </a>
@@ -193,6 +232,23 @@
       
     </div>
     
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">目录</div>
+    <div class="catalog-content">
+      
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E5%BB%BA%E7%AB%99"><span class="toc-text">关于建站</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6"><span class="toc-text">框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Github%E6%89%98%E7%AE%A1"><span class="toc-text">Github托管</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">服务器</span></a></li></ol></li></ol>
+      
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
 
     
       <div class="comments-container">
@@ -471,12 +527,12 @@
       </a>
       <div class="share-content hidden">
         
-          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + linux%E4%B8%8B%E7%8E%A9v831 + '&url=' + http%3A%2F%2Fexample.com%2F2024%2F09%2F17%2Flinux%25E4%25B8%258B%25E7%258E%25A9v831%2F + '" target="_blank" title="Twitter">
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + %E5%BB%BA%E7%AB%99%E8%AE%B0%E5%BD%95 + '&url=' + http%3A%2F%2Fliangjun.fun%2F2024%2F09%2F24%2F%25E5%25BB%25BA%25E7%25AB%2599%2F + '" target="_blank" title="Twitter">
             <i class="iconfont icon-twitter"></i>
           </a>
         
         
-          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://example.com/2024/09/17/linux%E4%B8%8B%E7%8E%A9v831/" target="_blank" title="Facebook">
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://liangjun.fun/2024/09/24/%E5%BB%BA%E7%AB%99/" target="_blank" title="Facebook">
             <i class="iconfont icon-facebooksquare"></i>
           </a>
         
