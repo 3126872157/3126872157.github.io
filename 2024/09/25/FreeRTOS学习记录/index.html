@@ -9,6 +9,8 @@
   
   <!-- 用于搜索引擎的文章摘要 -->
   
+  <meta name="description" content="晤言寄" />
+  
   
   
   <title>
@@ -18,7 +20,7 @@
       
       |
     
-     良骏的博客
+     一站之内
   </title>
 
   
@@ -90,6 +92,10 @@
           <a href="/categories/">分类</a>
         </li>
       
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">标签</a>
+        </li>
+      
         <li class="nav-item" data-path="/friends/">
           <a href="/friends/">友链</a>
         </li>
@@ -157,7 +163,7 @@
       <div class="post-attach">
         <span class="post-pubtime">
           <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
-          2024-09-25 23:48:51
+          2024-09-27 10:24:52
         </span>
         
               <span class="post-categories">
@@ -170,14 +176,19 @@
                 </span>
                 
                 <span class="span--category">
-                  <a href="/categories/%E5%AD%A6%E4%B9%A0/" title="学习">
-                    <b>#</b> 学习
+                  <a href="/categories/%E7%94%B5%E6%8E%A7/FreeRTOS/" title="FreeRTOS">
+                    <b>#</b> FreeRTOS
                   </a>
                 </span>
                 
-                <span class="span--category">
-                  <a href="/categories/FreeRTOS/" title="FreeRTOS">
-                    <b>#</b> FreeRTOS
+              </span>
+          
+              <span class="post-tags">
+                <i class="iconfont icon-tags mr-10" title="标签"></i>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/%E5%AD%A6%E4%B9%A0/" title="学习">
+                    #学习
                   </a>
                 </span>
                 
@@ -190,11 +201,38 @@
 <h2 id="契机"><a href="#契机" class="headerlink" title="契机"></a>契机</h2><p>参加了机赛，自动分拣项目需要一个复杂的流程。看了学长的代码，觉得实在不是很优雅。想到了现在熟视无睹的FreeRTOS，或许能发挥点作用呢，于是潜心学习去了。</p>
 <h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><p>我是通过一下几个渠道学习的。之前看过一个csdn的教程，上来就解释一堆宏和函数用法，着实看不懂。<br>我觉得最舒服的学习方法是：</p>
 <blockquote>
-<p>有了需求之后，结合自己的需求去看官方的文档和推荐的资料，看的不用很细，详略得当地看，应用时再来细细研究，再从别人的项目那里看实际应用例子，充实自己的认知。</p>
+<p>有了需求之后，结合自己的需求去看官方的文档和推荐的资料<br>看的不用很细，详略得当地看，应用时再来细细研究<br>同时可以从别人的项目那里看实际应用例子，充实自己的认知</p>
 </blockquote>
 <p><a target="_blank" rel="noopener" href="https://www.freertos.org/">官方网站</a><br><a target="_blank" rel="noopener" href="https://github.com/iclite/Mastering-the-FreeRTOS-Real-Time-Kernel-CN/tree/master">掌握FreeRTOS文档</a><br>csdn上的一些<a target="_blank" rel="noopener" href="https://blog.csdn.net/hbzdsXCV/article/details/128265500">项目</a></p>
-<h2 id="关于发行和堆"><a href="#关于发行和堆" class="headerlink" title="关于发行和堆"></a>关于发行和堆</h2><p>因为CubeMX里面已经移植了FreeRTOS了，所以不是很有必要去深究。但CubeMX所采用的是CMSIS OS的版本，对FreeRTOS进行了封装，这就是为什么osDelay和vTaskDelay是同一个东西的原因。至于heap的内存管理，我只知道heap4是最好用的版本。</p>
-<h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2>
+<h2 id="关于发行和堆"><a href="#关于发行和堆" class="headerlink" title="关于发行和堆"></a>关于发行和堆</h2><p>因为CubeMX里面已经移植了FreeRTOS了，所以不是很有必要去深究。<br>可以关注的是config.h，开关一些功能。<br>但CubeMX所采用的是CMSIS OS的版本，对FreeRTOS进行了封装，这就是为什么osDelay和vTaskDelay是同一个东西的原因。<br>至于heap的内存管理，我只知道heap4是最好用的版本。</p>
+<h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a><a target="_blank" rel="noopener" href="https://github.com/iclite/Mastering-the-FreeRTOS-Real-Time-Kernel-CN/blob/master/ren-wu-guan-li.md">任务</a></h2><p>在死循环里放你想执行的任务，配合各种事件来做出相应，如队列，信号量，事件组等</p>
+<h3 id="任务状态"><a href="#任务状态" class="headerlink" title="任务状态"></a>任务状态</h3><p>阻塞：等待事件（时间事件也算，如delay）到达，激活后切成就绪<br>挂起：用resume来恢复<br>就绪：根据优先级来判断是否运行<br>运行：就是运行</p>
+<h3 id="时间测量和Delay"><a href="#时间测量和Delay" class="headerlink" title="时间测量和Delay"></a>时间测量和Delay</h3><p>设置FreeRTOS的时候，一般会开一个用定时器作为滴答时间测量的，相当于生产时间戳，Delay就是通过这个实现的<br>每一个滴答间隔之间都有一个滴答中断，来决定下一个滴答运行哪个任务<br>延时函数一种是vTaskDelay，另一种是vTaskDelayUntil，区别大概是后者更精确吧，这个有待了解</p>
+<h3 id="调度方式"><a href="#调度方式" class="headerlink" title="调度方式"></a>调度方式</h3><p>时间分片：相同优先级的在相邻滴答周期交替进行<br>抢占式：FreeRTOS的灵魂</p>
+<h3 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h3><p>可以通过函数改变自身或通过句柄他人的优先级</p>
+<h3 id="相关函数"><a href="#相关函数" class="headerlink" title="相关函数"></a>相关函数</h3><blockquote>
+<p>任务函数本身<br>创建函数<br>删除函数<br>延时函数<br>优先级相关函数</p>
+</blockquote>
+<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a><a target="_blank" rel="noopener" href="https://github.com/iclite/Mastering-the-FreeRTOS-Real-Time-Kernel-CN/blob/master/dui-lie-guan-li.md">队列</a></h2><p>作为在堆的一个内核对象，它复制数据到堆里，负责任务间传输数据<br>问题来了，为啥不用extern呢</p>
+<h3 id="发送与接收"><a href="#发送与接收" class="headerlink" title="发送与接收"></a>发送与接收</h3><p>结合优先级，写入和读取各有阻塞，可以实现一些有意思的操作。</p>
+<blockquote>
+<p>如读取任务优先级高于写入任务，则可以保证队列里只有一个数据，因为一写入，接受任务就会抢占，读取并删除数据，这时进入阻塞状态，等待写入任务发送数据。<br>交换优先级可以让队列永远是满的。<br>如果有两个发送任务优先级相等，而接受任务高于他俩，则会交替发送，一发完就接受。</p>
+</blockquote>
+<p>结合上述知识，队列可以帮助实现流程中的任务间数据转移，或任务“通知”。</p>
+<h3 id="多源和指针"><a href="#多源和指针" class="headerlink" title="多源和指针"></a>多源和指针</h3><p>可以通过发送结构体（包含id和数据）来让接受任务区分是哪个发送者发出的。<br>可以通过发送指针，来发送不同类型和长度的数据</p>
+<h3 id="队列集"><a href="#队列集" class="headerlink" title="队列集"></a>队列集</h3><p>这个可以看成是多源和指针的高级加强版，可以有信号量和队列两种元素在队列集里面。<br>这有一个很实用的例子：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 从中接收字符指针的队列句柄。 */</span></span><br><span class="line">QueueHandle_t xCharPointerQueue;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 接收 uint32_t 值的队列句柄。 */</span></span><br><span class="line">QueueHandle_t xUint32tQueue;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 二进制信号量的句柄。 */</span></span><br><span class="line">SemaphoreHandle_t xBinarySemaphore;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 两个队列和二进制信号量所属的队列集。 */</span></span><br><span class="line">QueueSetHandle_t xQueueSet;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">vAMoreRealisticReceiverTask</span><span class="params">( <span class="type">void</span> *pvParameters )</span></span><br><span class="line">&#123;</span><br><span class="line">QueueSetMemberHandle_t xHandle;</span><br><span class="line"><span class="type">char</span> *pcReceivedString;</span><br><span class="line"><span class="type">uint32_t</span> ulRecievedValue;</span><br><span class="line"><span class="type">const</span> TickType_t xDelay100ms = pdMS_TO_TICKS( <span class="number">100</span> );</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>( ;; )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">/* 在队列集中阻塞最长100毫秒，以等待队列集中的一个成员包含数据。*/</span></span><br><span class="line">         xHandle = xQueueSelectFromSet( xQueueSet, xDelay100ms);</span><br><span class="line"></span><br><span class="line">         <span class="comment">/* 测试从 xQueueSelectFromSet() 返回的值。如果返回值为空，则对 </span></span><br><span class="line"><span class="comment">         xQueueSelectFromSet() 的调用超时。如果返回值不为空，则返回值将是集合成员之一的句柄。</span></span><br><span class="line"><span class="comment">         QueueSetMemberHandle_t 值可以转换为 QueueHandle_t 或 SemaphoreHandle_t。是否需</span></span><br><span class="line"><span class="comment">         要显式转换取决于编译器。 */</span></span><br><span class="line"></span><br><span class="line">         <span class="keyword">if</span>( xHandle == <span class="literal">NULL</span> )</span><br><span class="line">         &#123;</span><br><span class="line">             <span class="comment">/* 对 xQueueSelectFromSet() 的调用超时。 */</span></span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">else</span> <span class="keyword">if</span>( xHandle == ( QueueSetMemberHandle_t ) xCharPointerQueue )</span><br><span class="line">         &#123;</span><br><span class="line">             <span class="comment">/* 对 xQueueSelectFromSet() 的调用返回了接收字符指针的队列句柄。从队列中读取。已</span></span><br><span class="line"><span class="comment">             知队列包含数据，因此使用阻塞时间 0。*/</span></span><br><span class="line">             xQueueReceive(xCharPointerQueue, &amp;pcReceivedString, <span class="number">0</span> );</span><br><span class="line"></span><br><span class="line">             <span class="comment">/* 这里可以处理接收到的字符指针... */</span></span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">else</span> <span class="keyword">if</span>( xHandle == ( QueueSetMemberHandle_t ) xUint32tQueue )</span><br><span class="line">         &#123;</span><br><span class="line">             <span class="comment">/* 对 xQueueSelectFromSet() 的调用返回了接收 uint32_t 类型的队列句柄。从队列中</span></span><br><span class="line"><span class="comment">             读取。已知队列包含数据，因此使用 0 的阻塞时间。 */</span></span><br><span class="line">             xQueueReceive(xUint32tQueue, &amp;ulRecievedValue, <span class="number">0</span> );</span><br><span class="line"></span><br><span class="line">             <span class="comment">/* 接收到的值可以在这里处理... */</span></span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">else</span> <span class="keyword">if</span>( xHandle == ( QueueSetMemberHandle_t ) xBinarySemaphore )</span><br><span class="line">         &#123;</span><br><span class="line">             <span class="comment">/* 对 xQueueSelectFromSet() 的调用返回了二进制信号量的句柄。现在拿旗语。信号量已知</span></span><br><span class="line"><span class="comment">             可用，因此使用 0 的阻塞时间。*/</span></span><br><span class="line">             xSemaphoreTake(xBinarySemaphore, <span class="number">0</span> );</span><br><span class="line"></span><br><span class="line">             <span class="comment">/* 获取信号量时需要的任何处理都可以在这里执行... */</span></span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="邮箱"><a href="#邮箱" class="headerlink" title="邮箱"></a>邮箱</h3><p>这只是仅有单个数据的队列。<br>但是使用不同的函数让数据不会被读完删除，而是只读，写入覆盖这样。</p>
+<h3 id="相关函数-1"><a href="#相关函数-1" class="headerlink" title="相关函数"></a>相关函数</h3><blockquote>
+<p>队列创建函数<br>发送到头或尾的函数<br>接收函数<br>返回队列项目数的函数<br>队列集创建，加入，择取<br>覆写，只读不删函数</p>
+</blockquote>
+<h2 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a><a target="_blank" rel="noopener" href="https://github.com/iclite/Mastering-the-FreeRTOS-Real-Time-Kernel-CN/blob/master/ruan-jian-ding-shi-qi-guan-li.md">定时器</a></h2><p>定时器由一个回调函数和定时器实例（包括定时器命令队列，守护进程任务）组成。<br>具体机制是：发出定时器命令（如开启，重置等）到命令队列里面，守护进程任务会检查这个队列，并执行相应的回调函数。<br>守护进程任务的优先级最好设置的高一点，虽然较低也不会影响它执行回调函数，估计是用到了滴答间隔的滴答中断来检查定时器列表。</p>
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><p>可以运行和休眠<br>有单次和周期性定时器<br>定时器有ID来辨识身份<br>可以手动改变周期或者重置</p>
+<h3 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h3><p>底盘任务里判断是否到达指定位置：即定期检查里程误差，就可以用定时器回调和重置的功能</p>
+<h3 id="相关函数-2"><a href="#相关函数-2" class="headerlink" title="相关函数"></a>相关函数</h3><blockquote>
+<p>创建函数<br>开始，停止函数<br>重置或改变周期函数<br>获取滴答计数函数<br>设置ID查询ID函数<br>回调函数</p>
+</blockquote>
+
       </div>
       
         <div class="prev-or-next">
@@ -209,7 +247,7 @@
           <div class="post-attach">
             <span class="post-pubtime">
               <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
-              2024-09-25 23:48:51
+              2024-09-27 10:24:52
             </span>
             
                   <span class="post-categories">
@@ -222,14 +260,19 @@
                     </span>
                     
                     <span class="span--category">
-                      <a href="/categories/%E5%AD%A6%E4%B9%A0/" title="学习">
-                        <b>#</b> 学习
+                      <a href="/categories/%E7%94%B5%E6%8E%A7/FreeRTOS/" title="FreeRTOS">
+                        <b>#</b> FreeRTOS
                       </a>
                     </span>
                     
-                    <span class="span--category">
-                      <a href="/categories/FreeRTOS/" title="FreeRTOS">
-                        <b>#</b> FreeRTOS
+                  </span>
+              
+                  <span class="post-tags">
+                    <i class="iconfont icon-tags mr-10" title="标签"></i>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/%E5%AD%A6%E4%B9%A0/" title="学习">
+                        #学习
                       </a>
                     </span>
                     
@@ -238,7 +281,7 @@
           </div>
           <div class="post-foot-prev">
             
-              <a href="/2024/09/25/linux%E4%B8%8B%E7%8E%A9v831/" target="_self">
+              <a href="/2024/09/27/%E8%A3%85ubuntu%E7%B3%BB%E7%BB%9F%E8%AE%B0%E5%BD%95/" target="_self">
                 <span>下一页</span>
                 <i class="iconfont icon-chevronright"></i>
               </a>
@@ -255,7 +298,7 @@
     <div class="title">目录</div>
     <div class="catalog-content">
       
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A5%91%E6%9C%BA"><span class="toc-text">契机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B5%84%E6%BA%90"><span class="toc-text">资源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E5%8F%91%E8%A1%8C%E5%92%8C%E5%A0%86"><span class="toc-text">关于发行和堆</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1"><span class="toc-text">任务</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A5%91%E6%9C%BA"><span class="toc-text">契机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B5%84%E6%BA%90"><span class="toc-text">资源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E5%8F%91%E8%A1%8C%E5%92%8C%E5%A0%86"><span class="toc-text">关于发行和堆</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1"><span class="toc-text">任务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1%E7%8A%B6%E6%80%81"><span class="toc-text">任务状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E6%B5%8B%E9%87%8F%E5%92%8CDelay"><span class="toc-text">时间测量和Delay</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B0%83%E5%BA%A6%E6%96%B9%E5%BC%8F"><span class="toc-text">调度方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-text">优先级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0"><span class="toc-text">相关函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%9F%E5%88%97"><span class="toc-text">队列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%91%E9%80%81%E4%B8%8E%E6%8E%A5%E6%94%B6"><span class="toc-text">发送与接收</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E6%BA%90%E5%92%8C%E6%8C%87%E9%92%88"><span class="toc-text">多源和指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%9F%E5%88%97%E9%9B%86"><span class="toc-text">队列集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%AE%E7%AE%B1"><span class="toc-text">邮箱</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0-1"><span class="toc-text">相关函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E6%97%B6%E5%99%A8"><span class="toc-text">定时器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E6%80%A7"><span class="toc-text">特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%83%B3%E6%B3%95"><span class="toc-text">想法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0-2"><span class="toc-text">相关函数</span></a></li></ol></li></ol>
       
     </div>
   </div>
@@ -300,7 +343,7 @@
     
     <div class="footer-more">
       
-        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © 2024 Oranges</a>
+        <a target="_blank" rel="noopener" href="https://github.com/3126872157">Copyright © 2024 Liangjun</a>
         
     </div>
   
@@ -543,12 +586,12 @@
       </a>
       <div class="share-content hidden">
         
-          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + FreeRTOS%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95 + '&url=' + http%3A%2F%2Fliangjun.fun%2F2024%2F09%2F25%2FFreeRTOS%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2F + '" target="_blank" title="Twitter">
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + FreeRTOS%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95 + '&url=' + https%3A%2F%2Fliangjun.fun%2F2024%2F09%2F25%2FFreeRTOS%25E5%25AD%25A6%25E4%25B9%25A0%25E8%25AE%25B0%25E5%25BD%2595%2F + '" target="_blank" title="Twitter">
             <i class="iconfont icon-twitter"></i>
           </a>
         
         
-          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://liangjun.fun/2024/09/25/FreeRTOS%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" target="_blank" title="Facebook">
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=https://liangjun.fun/2024/09/25/FreeRTOS%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" target="_blank" title="Facebook">
             <i class="iconfont icon-facebooksquare"></i>
           </a>
         
