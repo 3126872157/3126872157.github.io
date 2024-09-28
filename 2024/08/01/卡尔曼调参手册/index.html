@@ -15,7 +15,7 @@
   
   <title>
     
-      装ubuntu系统记录 
+      傻瓜卡尔曼调参手册 
       
       
       |
@@ -159,11 +159,11 @@
   <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
   <div class="container post-details" id="post-details">
     <div class="post-content">
-      <div class="post-title">装ubuntu系统记录</div>
+      <div class="post-title">傻瓜卡尔曼调参手册</div>
       <div class="post-attach">
         <span class="post-pubtime">
           <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
-          2024-09-27 09:32:53
+          2024-09-28 10:21:58
         </span>
         
               <span class="post-categories">
@@ -176,8 +176,8 @@
                 </span>
                 
                 <span class="span--category">
-                  <a href="/categories/%E8%A7%86%E8%A7%89/linux/" title="linux">
-                    <b>#</b> linux
+                  <a href="/categories/%E8%A7%86%E8%A7%89/%E5%8D%A1%E5%B0%94%E6%9B%BC/" title="卡尔曼">
+                    <b>#</b> 卡尔曼
                   </a>
                 </span>
                 
@@ -196,24 +196,94 @@
           
       </div>
       <div class="markdown-body">
-        <p>我有一台破笔记本和能用的台式。这两个设备我来回装系统快十次了。这里简要记录一下，减轻一点痛苦。</p>
+        <p>纪念在深圳湾边上的暑假。</p>
 <hr>
+<h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><ul>
+<li>右手系，拇指食指中指xyz，枪口指向x正方向</li>
+<li><code>/camera result</code>为世界系，上电时根据云台c板位置固定，云台转世界系不动</li>
+<li><code>/camera pos</code>为相机系，随云台运动</li>
+<li><code>robot/mode</code>，1为打福模式其中config数组的第一个为1是大福0为小福，0为打装甲模式</li>
+<li>rqt里开<code>parameter reconfigure</code>，<code>topic monitor</code>，<code>plot</code></li>
+<li><code>theta</code>指的是装甲板法向量与相机x轴的夹角</li>
+</ul>
+<hr>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="拉新的代码"><a href="#拉新的代码" class="headerlink" title="拉新的代码"></a>拉新的代码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd RM2024-new/</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout main</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull --recurse-submodule</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd src</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git submodule update</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ..</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">colcon build</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source install/setup.bash</span><br></pre></td></tr></table></figure>
+
+<h3 id="标定"><a href="#标定" class="headerlink" title="标定"></a>标定</h3><p>注意电量在三个及以上</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd scripts/</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./calibration.py</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>看不清可以调曝光</li>
+<li>size不满是正常的</li>
+<li>samples数到110张左右为宜</li>
+<li>calibrate按钮只按一次，按完卡住报错正常</li>
+<li>太卡要在bios下开性能模式或相机用usb3</li>
+<li>参数d和k复制到camera.yaml下，若原本就是空的，则ros2 param dump一下</li>
+</ul>
+<h3 id="调偏置"><a href="#调偏置" class="headerlink" title="调偏置"></a>调偏置</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ros2 launch auto_aim auto_aim_launch.py</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>source</code>一下</li>
+<li>打开rqt，在<code>动态调参数</code>里的ballistic的节点里改<code>yaw_offset</code>和<code>pitch_offset</code></li>
+<li>点头pitch摇头yaw</li>
+<li>要是rqt改不了就用<code>ros2 param get</code>和<code>ros2 param set</code></li>
+</ul>
+<h3 id="调普通卡尔曼"><a href="#调普通卡尔曼" class="headerlink" title="调普通卡尔曼"></a>调普通卡尔曼</h3><ul>
+<li>调<code>Kalman</code>的Q，R和delay，噪声以手感不到云台震动为宜</li>
+</ul>
+<h3 id="调反陀螺卡尔曼"><a href="#调反陀螺卡尔曼" class="headerlink" title="调反陀螺卡尔曼"></a>调反陀螺卡尔曼</h3><ul>
+<li>调x，y和theta的相应的Q和R，x0，y0，r和w是内参有Q无R（优先不调）</li>
+<li>在antitop节点theta和detect result yaw比调，调q_theta，只在参数文件 <code>auto_aim/config</code>车文件夹里的<code>armor_tracker.yaml</code>里面调，不在rqt里或者终端改参数，因为参数只在开始读一次</li>
+<li>优先调theta到w平滑可信（w速度与现实相符，单位rad&#x2F;s），再是调x和y</li>
+<li>最后调<code>anti_top/delay</code></li>
+</ul>
+<h2 id="靶机oled设置"><a href="#靶机oled设置" class="headerlink" title="靶机oled设置"></a>靶机oled设置</h2><ul>
+<li>长按菜单<ul>
+<li>id红蓝</li>
+<li>无限血量</li>
+<li>离线模式</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="傻哔问题"><a href="#傻哔问题" class="headerlink" title="傻哔问题"></a>傻哔问题</h2><ul>
+<li>联网，确认梯子</li>
+<li>自瞄要开（波轮往下打）</li>
+<li>先<code>pull</code>再<code>submodule update</code></li>
+<li>记得<code>source</code>，不管是build之后还是开rqt之前</li>
+<li>开自瞄乱锁的话就是launch <code>auto_aim</code></li>
+<li>要是rqt里的节点少了，就在auto_aim文件夹下的<code>auto_aim_launch.py</code>文件里加上那些节点</li>
+<li>勾上autoscroll，就会自动滚起来了</li>
+</ul>
 
       </div>
       
         <div class="prev-or-next">
           <div class="post-foot-next">
             
-              <a href="/2024/09/25/FreeRTOS%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" target="_self">
-                <i class="iconfont icon-chevronleft"></i>
-                <span>上一页</span>
-              </a>
-            
           </div>
           <div class="post-attach">
             <span class="post-pubtime">
               <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
-              2024-09-27 09:32:53
+              2024-09-28 10:21:58
             </span>
             
                   <span class="post-categories">
@@ -226,8 +296,8 @@
                     </span>
                     
                     <span class="span--category">
-                      <a href="/categories/%E8%A7%86%E8%A7%89/linux/" title="linux">
-                        <b>#</b> linux
+                      <a href="/categories/%E8%A7%86%E8%A7%89/%E5%8D%A1%E5%B0%94%E6%9B%BC/" title="卡尔曼">
+                        <b>#</b> 卡尔曼
                       </a>
                     </span>
                     
@@ -247,7 +317,7 @@
           </div>
           <div class="post-foot-prev">
             
-              <a href="/2024/09/27/linux%E4%B8%8B%E7%8E%A9v831/" target="_self">
+              <a href="/2024/09/17/hello-world/" target="_self">
                 <span>下一页</span>
                 <i class="iconfont icon-chevronright"></i>
               </a>
@@ -257,6 +327,23 @@
       
     </div>
     
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">目录</div>
+    <div class="catalog-content">
+      
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86"><span class="toc-text">前置知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4"><span class="toc-text">步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E6%96%B0%E7%9A%84%E4%BB%A3%E7%A0%81"><span class="toc-text">拉新的代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E5%AE%9A"><span class="toc-text">标定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B0%83%E5%81%8F%E7%BD%AE"><span class="toc-text">调偏置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B0%83%E6%99%AE%E9%80%9A%E5%8D%A1%E5%B0%94%E6%9B%BC"><span class="toc-text">调普通卡尔曼</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B0%83%E5%8F%8D%E9%99%80%E8%9E%BA%E5%8D%A1%E5%B0%94%E6%9B%BC"><span class="toc-text">调反陀螺卡尔曼</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%B6%E6%9C%BAoled%E8%AE%BE%E7%BD%AE"><span class="toc-text">靶机oled设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%82%BB%E5%93%94%E9%97%AE%E9%A2%98"><span class="toc-text">傻哔问题</span></a></li></ol>
+      
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
 
     
       <div class="comments-container">
@@ -535,12 +622,12 @@
       </a>
       <div class="share-content hidden">
         
-          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + %E8%A3%85ubuntu%E7%B3%BB%E7%BB%9F%E8%AE%B0%E5%BD%95 + '&url=' + https%3A%2F%2Fliangjun.fun%2F2024%2F09%2F27%2F%25E8%25A3%2585ubuntu%25E7%25B3%25BB%25E7%25BB%259F%25E8%25AE%25B0%25E5%25BD%2595%2F + '" target="_blank" title="Twitter">
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + %E5%82%BB%E7%93%9C%E5%8D%A1%E5%B0%94%E6%9B%BC%E8%B0%83%E5%8F%82%E6%89%8B%E5%86%8C + '&url=' + https%3A%2F%2Fliangjun.fun%2F2024%2F08%2F01%2F%25E5%258D%25A1%25E5%25B0%2594%25E6%259B%25BC%25E8%25B0%2583%25E5%258F%2582%25E6%2589%258B%25E5%2586%258C%2F + '" target="_blank" title="Twitter">
             <i class="iconfont icon-twitter"></i>
           </a>
         
         
-          <a class="share-item" href="https://www.facebook.com/sharer.php?u=https://liangjun.fun/2024/09/27/%E8%A3%85ubuntu%E7%B3%BB%E7%BB%9F%E8%AE%B0%E5%BD%95/" target="_blank" title="Facebook">
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=https://liangjun.fun/2024/08/01/%E5%8D%A1%E5%B0%94%E6%9B%BC%E8%B0%83%E5%8F%82%E6%89%8B%E5%86%8C/" target="_blank" title="Facebook">
             <i class="iconfont icon-facebooksquare"></i>
           </a>
         
