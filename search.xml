@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>前端有感</title>
+      <link href="/2024/12/17/%E5%89%8D%E7%AB%AF%E6%9C%89%E6%84%9F/"/>
+      <url>/2024/12/17/%E5%89%8D%E7%AB%AF%E6%9C%89%E6%84%9F/</url>
+      
+        <content type="html"><![CDATA[<p>做战队的官网时学习前端有感，并且在此记录学习过程。<br>参考文章：<br><a href="https://appmaster.io/zh/blog/liu-xing-de-qian-duan-kuang-jia">前端框架</a><br><a href="https://www.processon.com/knowledge/qianduankaifaweilai">前端开发趋势</a><br><a href="https://www.runoob.com/html/html-tutorial.html">菜鸟教程</a></p><hr><h2 id="前端三剑客"><a href="#前端三剑客" class="headerlink" title="前端三剑客"></a>前端三剑客</h2><p>HTML，CSS，JavaScript这三者分别对应：骨架，衣服，大脑。<br>HTML提供了页面的基本框架和内容的布局，负责结构和内容；CSS设置字体颜色边距布局等等；JavaScript处理用户操作（按钮，表单）、动态修改页面、与服务器通信等。<br>简单来说，HTML提供内容，CSS美化内容，JS让内容动起来。<br>&nbsp;<br>拿小学生都熟悉的例子————word文档，来对照前端三剑客的话：<br>HTML组织了一篇文档的标题，正文，表格等等；<br>CSS就是负责文档样式的调整，像标题居中，字体颜色大小，页眉页脚页边距等等；<br>JS的话，就是加一些按钮啥的，好像这个word里面没有，但ppt里有。</p><h2 id="关于前端开发"><a href="#关于前端开发" class="headerlink" title="关于前端开发"></a>关于前端开发</h2><p>当前，前端的开发方式已经不是简单的HTML+CSS+JS了，流行的是一种叫开发框架的东西。<br>这得从前端发展开始讲起：</p><h3 id="前端小史"><a href="#前端小史" class="headerlink" title="前端小史"></a>前端小史</h3><p>90年代（静态页面时代）的前端开发就是以三剑客的基础技术为主的，页面静态且交互性低。<br>后来动态页面技术萌芽，ASP和PHP兴起，AJAX（页面不刷新但动态更新）技术初探等等<br>Web2.0时代来临，AJAX技术普及，前端框架和库大量出现（最初的jQuery，到后来的React等），然后到移动端设计、发展响应式设计，这些都推动前端开发方式的改变。<br>&nbsp;<br>框架的出现，推动前端技术发展，标准化的库和接口简化开发工作，所以现在的学习和开发，当然是要基于框架了。<br>我这次接触的是NextJs，基于React框架（用户量大，易学）。当然还有Vue.Js也不错。<br>现在的开发虽然离不开这三剑客，但是开发时这三者边界模糊，一个项目的.js文件基本上是这三剑客的结合体。<br>&nbsp;<br>至于学习前端，最好是三剑客一起学，做一个初步的了解，然后选择一个框架，在搭个人博客的时候边做边学，了解每个主题的底层实现。</p><h2 id="关于HTML"><a href="#关于HTML" class="headerlink" title="关于HTML"></a>关于HTML</h2><p>学习HTML，元素这个概念是核心，一个html文件就是元素堆叠，嵌套构成的，就是那些小括号们<code>&lt;&gt;</code>。<br>写html文档，就是把内容换成元素，堆起来就行。</p><h3 id="元素-Element"><a href="#元素-Element" class="headerlink" title="元素(Element)"></a>元素(Element)</h3><p>HTML由<code>元素</code>组成，由开始标签、结束标签及两者之间的内容构成，像这个：<br>    <code>&lt;p&gt;这里是段落内容。&lt;/p&gt;</code><br>一个HTML文件就是通过元素的嵌套写成的。<br>快速学习HTML就可以从了解不同的标签（元素）下手。比如常用的标题、段落，链接、图标、布局、文本格式化等等。<br>一个比较重要的元素是<code>&lt;div&gt;</code>，容器元素。</p><h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><p>属性是描述元素的工具。<br>有全局属性（全部元素适用）和事件属性（与浏览器行为有关，JS负责此部分）<br>比如：<br>    <code>&lt;style type=&quot;text/css&quot;&gt; &lt;/style&gt;</code><br>里面的type就是style元素的属性了。</p><h3 id="事件（属性的一种）"><a href="#事件（属性的一种）" class="headerlink" title="事件（属性的一种）"></a>事件（属性的一种）</h3><p>就是上面说的事件属性，结合JS，通过script实现，然后作为元素的属性作用在元素上面。<br>有许多事件，像窗口事件，键盘鼠标事件，表单事件，多媒体事件等等。</p><h2 id="关于CSS"><a href="#关于CSS" class="headerlink" title="关于CSS"></a>关于CSS</h2><p>Cascading Style Sheet，层叠样式表，本质上就是样式（style）和表（sheet）的层叠，所以其核心就是一个个的“格式刷”————选择器。</p><h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><p>写CSS就是写选择器和声明。<br><code>h1 &#123;color:blue;font-size:12px;&#125;</code>中<code>h1</code>就是选择器；大括号里的是两条声明，分号结尾；声明分为属性<code>color</code>和值<code>blue</code>，这个跟HTML里的属性是一样的。<br>&nbsp;<br>理解CSS就是理解选择器如何作用到HTML里各个元素身上的。<br>而选择器的通俗理解，就是通过class等属性和一些特征，去匹配一些元素，然后把大括号里的要求作用于此元素，也就是把什么属性搞成什么样式的。<br>&nbsp;<br>重要的语法有<a href="https://www.runoob.com/css/css-id-class.html">class选择器</a>，<a href="https://www.runoob.com/css/css-combinators.html">组合选择符</a>，<a href="https://www.runoob.com/css/css-pseudo-classes.html">伪类</a>和伪元素，<a href="https://www.runoob.com/css/css-attribute-selectors.html">属性选择器</a>、分组和嵌套等也可以了解下。</p><h3 id="盒子模型（Box-Model）"><a href="#盒子模型（Box-Model）" class="headerlink" title="盒子模型（Box Model）"></a>盒子模型（Box Model）</h3><p><a href="https://www.runoob.com/css/css-boxmodel.html">盒子模型</a>是CSS的一个重要概念，在设计和布局时使用。<br><em>所有</em>的HTML元素都可以看做盒子，只要是一个盒子，就有边距（margin）、边框（boarder）、填充（padding）、内容（content）这些要素。<br>&nbsp;<br>当上面的概念了解的差不多，可以试试<a href="https://www.runoob.com/css/css-navbar.html">导航栏</a>，<a href="https://www.runoob.com/css/css-dropdowns.html">下拉菜单</a>等，熟悉熟悉。</p><h2 id="关于JS"><a href="#关于JS" class="headerlink" title="关于JS"></a>关于JS</h2><p>JS是关于对事件的反应，然后改变HTML内容和样式的脚本（script）。常有的是，查找元素的属性（比如id），检测元素的事件（如onlick检测是否按下），然后改变目标内容（如样式中的颜色，或是HTML内容）。这就和之前讲的HTML和CSS都联系在一起了。<br>还有，JS和java没有鸟关系。</p><h3 id="速学路径"><a href="#速学路径" class="headerlink" title="速学路径"></a>速学路径</h3><p>和前面的HTML和CSS不一样，JS是一个挺正经的编程语言，跟C、python这些一样，所以学习时思路和以前差不多，要掌握基本语法，函数，对象等；鉴于JS的独特性，还需要了解DOM，模块化，异步编程等特性。<br>正儿八经学的话，可以在Chrome浏览器运行。</p><h3 id=""><a href="#" class="headerlink" title=""></a></h3><h2 id="关于React，Tailwind，NextJs"><a href="#关于React，Tailwind，NextJs" class="headerlink" title="关于React，Tailwind，NextJs"></a>关于React，Tailwind，NextJs</h2><h2 id="包（yarn）"><a href="#包（yarn）" class="headerlink" title="包（yarn）"></a>包（yarn）</h2><h2 id="关于如何学习"><a href="#关于如何学习" class="headerlink" title="关于如何学习"></a>关于如何学习</h2><p>chatGPT，菜鸟，学习时机，方法等思考</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 学习 </tag>
+            
+            <tag> 有感 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>po33玩耍记录</title>
+      <link href="/2024/12/12/po33%E7%8E%A9%E8%80%8D%E8%AE%B0%E5%BD%95/"/>
+      <url>/2024/12/12/po33%E7%8E%A9%E8%80%8D%E8%AE%B0%E5%BD%95/</url>
+      
+        <content type="html"><![CDATA[<p>很好玩的计算器。</p><hr><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><p>这是官方的<a href="https://teenage.engineering/guides/po-33/en">PO33 guide</a>。<br>我这份玩耍记录涵盖了官方的教程和一些自己的心得玩法。</p><h3 id="关于旋律和鼓组（melodic-and-drum）"><a href="#关于旋律和鼓组（melodic-and-drum）" class="headerlink" title="关于旋律和鼓组（melodic and drum）"></a>关于旋律和鼓组（melodic and drum）</h3><p>PO33有16个槽位，分为旋律组和鼓组，各占8个槽位。<br>按住<strong>sound</strong>，可以观察到有key亮起，闪烁代表当前选中的sound，不亮的代表该槽位没有sound。<br>想要选中不同sound来预览的话，按住<strong>sound</strong>再按下目标<strong>key</strong>即可。对于鼓组，按住<strong>sound</strong>再连按目标<strong>key</strong>可以听完所有切分的鼓的音色。<br>如将采样录入到旋律组，按下<strong>key</strong>1-16会播放录入的sound<u>特定片段</u>的不同音高。（关于这个特定片段后米娜会讲到）<br>而将一段采样录入鼓组的话，PO33会自动将其chop（切）成很多片，每个<strong>key</strong>链接这整段sound的其中一个<u>小片段</u>。</p><h3 id="删除一些东西"><a href="#删除一些东西" class="headerlink" title="删除一些东西"></a>删除一些东西</h3><p>删之前先播放听一下，确认删除内容。<br>删除sound：先选中一个sound，按住<strong>record</strong>和<strong>sound</strong>，即可删除选中sound。<br>删除pattern：同理选中一个pattern，再按住<strong>record</strong>和<strong>pattern</strong>即可删除所选。</p><h3 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h3><h3 id="录音（recording）"><a href="#录音（recording）" class="headerlink" title="录音（recording）"></a>录音（recording）</h3><p>按住<strong>record</strong>和<strong>key</strong>1-16（你想录入的槽位），即可开始录音，松开按键结束。<br>PO33总共支持最多录40秒的内容。录的时候，剩余秒数会显示在LCD屏幕上。<br>外置音源通过PO33左边的音频口输入。</p><h3 id="修音（tweak-the-sound）"><a href="#修音（tweak-the-sound）" class="headerlink" title="修音（tweak the sound）"></a>修音（tweak the sound）</h3><p>选择一个声音</p><h3 id="编曲（playing）"><a href="#编曲（playing）" class="headerlink" title="编曲（playing）"></a>编曲（playing）</h3><p>PO33采用音序器（sequencer）来记录谱面。也可以在整个</p><h2 id="进阶一点的"><a href="#进阶一点的" class="headerlink" title="进阶一点的"></a>进阶一点的</h2><h3 id="滚奏"><a href="#滚奏" class="headerlink" title="滚奏"></a>滚奏</h3><h2 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h2><h3 id="恢复出厂设置（factory-reset）"><a href="#恢复出厂设置（factory-reset）" class="headerlink" title="恢复出厂设置（factory reset）"></a>恢复出厂设置（factory reset）</h3><p>拆掉电池，按住<strong>pattern</strong>和<strong>write</strong>键，然后装上电池。<br>就可以得到出厂预设的8个melodic和8个drum。</p><h3 id="设置闹钟（alarm-clock）"><a href="#设置闹钟（alarm-clock）" class="headerlink" title="设置闹钟（alarm clock）"></a>设置闹钟（alarm clock）</h3><p>按下<strong>sound</strong>和<strong>pattern</strong>键，旋钮A设置时，旋钮B设置分，然后按<strong>key</strong>1-16设置alarm的pattern。<br>将旋钮A拧到底即可关闭闹钟。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>奇诺之旅观感</title>
+      <link href="/2024/09/28/%E5%A5%87%E8%AF%BA%E4%B9%8B%E6%97%85%E8%A7%82%E6%84%9F/"/>
+      <url>/2024/09/28/%E5%A5%87%E8%AF%BA%E4%B9%8B%E6%97%85%E8%A7%82%E6%84%9F/</url>
+      
+        <content type="html"><![CDATA[<p>看的是2017版，第一集太神了吧。剧透</p><hr><p>整集除去ed就是一个对比强烈的回文结构，而且卒章显志，掷地有声啊。</p><p>开头抛伏笔，如为什么为了前进不惜杀人，雷格尔过得咋样，两把有名字的枪干什么用的，奇诺实力如何会不会有危险，为啥治安那么好，为啥奇诺练枪，为啥老板说杀人表情那么奇怪，老人究竟啥背景；</p><p>随着对决高潮的到来，伏笔像递归般回收，老人就是放下屠刀的雷格尔，解开我心里的疑问，疑问在思索之后得到答案，让我自我感觉良好，感到震惊之余也放下了之前的忐忑，心里大呼太妙了。</p><p>如果没有似曾相识的遇到一人一马这个桥段，之前的剧情都可以视作没有意义的炫技，一种特意设立的奇观。</p><p>但遇到了一位真正因为迫不得已才杀人的疲惫的旅者，他的散发风尘仆仆的气质和介于松弛和警觉之间的收敛疲惫的感觉，与开头那位咄咄逼人且让人感到危险的小哥在人设上形成极致的对比，本性上也是天差地别。他们俩都想去这个国家定居，这个时候一种关于杀人而展开的善恶纠葛不清的思考，在我脑里炸开，这竟然预设了如此科幻的思考题。</p><p>旅者的定居和奇诺的旅行又再次形成对比，引起我对奇诺所追求的事物感到好奇，这里也带给我一种独属公路和旅行的感觉：看到一方奇观，见到几个奇人，这好像就是我向往旅行的原因。</p><p>结尾在篝火与树林里回收叙事钩子，连起来交代了奇诺的背景：师父的高徒，高端枪手，而旅行的初心是探寻内心背负的重担，去感受别人生活的美好，鞭策自己前行去发现和接纳自己。</p><p>奇诺这个人在第一集一下立住了，强大，神秘，低调，求索，不仅收尾的对白里面展现了奇诺的特质，剧情上如通过了老人的考验，挑战吃蛋糕，练枪，不怕危险的入境，和旅者定居不同奇诺选择继续漂泊，都反应了她的特点，让我“这番追定了”。</p><p>奇诺的个人特点不禁让我联想到其他公路作品，Blame的雾亥，终末的千尤，MadMax电影的女主。就喜欢这味。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 书影音 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 有感 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>linux下玩v831</title>
+      <link href="/2024/09/27/linux%E4%B8%8B%E7%8E%A9v831/"/>
+      <url>/2024/09/27/linux%E4%B8%8B%E7%8E%A9v831/</url>
+      
+        <content type="html"><![CDATA[<p>太痛苦了</p><hr>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>FreeRTOS学习记录</title>
+      <link href="/2024/09/25/FreeRTOS%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+      <url>/2024/09/25/FreeRTOS%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+      
+        <content type="html"><![CDATA[<p>FreeRTOS就是为了复杂流程而生的。</p><hr><h2 id="契机"><a href="#契机" class="headerlink" title="契机"></a>契机</h2><p>参加了机赛，自动分拣项目需要一个复杂的流程。代码实在不是很优雅。想到了现在熟视无睹的FreeRTOS，或许能发挥点作用呢，于是潜心学习去了。</p><h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><p>我是通过一下几个渠道学习的。之前看过一个csdn的教程，上来就解释一堆宏和函数用法，着实看不懂。<br>我觉得最舒服的学习方法是：</p><blockquote><p>有了需求之后，结合自己的需求去看官方的文档和推荐的资料<br>看的不用很细，详略得当地看，应用时再来细细研究<br>同时可以从别人的项目那里看实际应用例子，充实自己的认知</p></blockquote><p><a href="https://www.freertos.org/">官方网站</a><br><a href="https://github.com/iclite/Mastering-the-FreeRTOS-Real-Time-Kernel-CN/tree/master">掌握FreeRTOS文档</a><br>csdn上的一些<a href="https://blog.csdn.net/hbzdsXCV/article/details/128265500">项目</a></p><h2 id="关于发行和堆"><a href="#关于发行和堆" class="headerlink" title="关于发行和堆"></a>关于发行和堆</h2><p>对于FreeRTOS的移植，因为CubeMX里面已经移植了FreeRTOS了，所以不是很有必要去深究。<br>但是可以关注的是<code>config.h</code>，来开关一些功能。<br>值得注意的是CubeMX所采用的是<code>CMSIS OS</code>的版本，对FreeRTOS进行了封装，这就是为什么<code>osDelay</code>和<code>vTaskDelay</code>是同一个东西的原因。<br>至于heap的内存管理，我只知道heap4是最好用的版本。</p><h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a><a href="https://github.com/iclite/Mastering-the-FreeRTOS-Real-Time-Kernel-CN/blob/master/ren-wu-guan-li.md">任务</a></h2><p>在死循环里放你想执行的任务，配合各种事件来做出相应，如队列，信号量，事件组等</p><h3 id="任务状态"><a href="#任务状态" class="headerlink" title="任务状态"></a>任务状态</h3><p>阻塞：等待事件（时间事件也算，如<code>Delay</code>）到达，激活后切成就绪<br>挂起：用<code>resume</code>来恢复<br>就绪：根据优先级来判断是否运行<br>运行：就是运行</p><h3 id="时间测量和Delay"><a href="#时间测量和Delay" class="headerlink" title="时间测量和Delay"></a>时间测量和Delay</h3><p>设置FreeRTOS的时候，一般会开一个用定时器作为滴答时间测量的，相当于生产时间戳，<code>Delay</code>就是通过这个实现的<br>每一个滴答间隔之间都有一个滴答中断，来决定下一个滴答运行哪个任务<br>延时函数一种是vTaskDelay，另一种是vTaskDelayUntil，区别大概是后者更精确吧，这个有待了解</p><h3 id="调度方式"><a href="#调度方式" class="headerlink" title="调度方式"></a>调度方式</h3><p>时间分片：相同优先级的在相邻滴答周期交替进行<br>抢占式：FreeRTOS的灵魂</p><h3 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h3><p>可以通过函数改变自身或通过句柄他人的优先级</p><h3 id="相关函数"><a href="#相关函数" class="headerlink" title="相关函数"></a>相关函数</h3><blockquote><p>任务函数本身<br>创建函数<br>删除函数<br>延时函数<br>优先级相关函数</p></blockquote><br/><h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a><a href="https://github.com/iclite/Mastering-the-FreeRTOS-Real-Time-Kernel-CN/blob/master/dui-lie-guan-li.md">队列</a></h2><p>作为在堆的一个内核对象，它复制数据到堆里，负责任务间传输数据<br>问题来了，为啥不用extern呢</p><h3 id="发送与接收"><a href="#发送与接收" class="headerlink" title="发送与接收"></a>发送与接收</h3><p>结合优先级，写入和读取各有阻塞，可以实现一些有意思的操作。</p><blockquote><p>如读取任务优先级高于写入任务，则可以保证队列里只有一个数据，因为一写入，接受任务就会抢占，读取并删除数据，这时进入阻塞状态，等待写入任务发送数据。<br>交换优先级可以让队列永远是满的。<br>如果有两个发送任务优先级相等，而接受任务高于他俩，则会交替发送，一发完就接受。</p></blockquote><p>结合上述知识，队列可以帮助实现流程中的任务间数据转移，或任务“通知”。</p><h3 id="多源和指针"><a href="#多源和指针" class="headerlink" title="多源和指针"></a>多源和指针</h3><p>可以通过发送结构体（包含id和数据）来让接受任务区分是哪个发送者发出的。<br>可以通过发送指针，来发送不同类型和长度的数据</p><h3 id="队列集"><a href="#队列集" class="headerlink" title="队列集"></a>队列集</h3><p>这个可以看成是多源和指针的高级加强版，可以有信号量和队列两种元素在队列集里面。<br>这有一个很实用的例子：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 从中接收字符指针的队列句柄。 */</span></span><br><span class="line">QueueHandle_t xCharPointerQueue;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 接收 uint32_t 值的队列句柄。 */</span></span><br><span class="line">QueueHandle_t xUint32tQueue;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 二进制信号量的句柄。 */</span></span><br><span class="line">SemaphoreHandle_t xBinarySemaphore;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 两个队列和二进制信号量所属的队列集。 */</span></span><br><span class="line">QueueSetHandle_t xQueueSet;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">vAMoreRealisticReceiverTask</span><span class="params">( <span class="type">void</span> *pvParameters )</span></span><br><span class="line">&#123;</span><br><span class="line">QueueSetMemberHandle_t xHandle;</span><br><span class="line"><span class="type">char</span> *pcReceivedString;</span><br><span class="line"><span class="type">uint32_t</span> ulRecievedValue;</span><br><span class="line"><span class="type">const</span> TickType_t xDelay100ms = pdMS_TO_TICKS( <span class="number">100</span> );</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>( ;; )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">/* 在队列集中阻塞最长100毫秒，以等待队列集中的一个成员包含数据。*/</span></span><br><span class="line">         xHandle = xQueueSelectFromSet( xQueueSet, xDelay100ms);</span><br><span class="line"></span><br><span class="line">         <span class="comment">/* 测试从 xQueueSelectFromSet() 返回的值。如果返回值为空，则对 </span></span><br><span class="line"><span class="comment">         xQueueSelectFromSet() 的调用超时。如果返回值不为空，则返回值将是集合成员之一的句柄。</span></span><br><span class="line"><span class="comment">         QueueSetMemberHandle_t 值可以转换为 QueueHandle_t 或 SemaphoreHandle_t。是否需</span></span><br><span class="line"><span class="comment">         要显式转换取决于编译器。 */</span></span><br><span class="line"></span><br><span class="line">         <span class="keyword">if</span>( xHandle == <span class="literal">NULL</span> )</span><br><span class="line">         &#123;</span><br><span class="line">             <span class="comment">/* 对 xQueueSelectFromSet() 的调用超时。 */</span></span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">else</span> <span class="keyword">if</span>( xHandle == ( QueueSetMemberHandle_t ) xCharPointerQueue )</span><br><span class="line">         &#123;</span><br><span class="line">             <span class="comment">/* 对 xQueueSelectFromSet() 的调用返回了接收字符指针的队列句柄。从队列中读取。已</span></span><br><span class="line"><span class="comment">             知队列包含数据，因此使用阻塞时间 0。*/</span></span><br><span class="line">             xQueueReceive(xCharPointerQueue, &amp;pcReceivedString, <span class="number">0</span> );</span><br><span class="line"></span><br><span class="line">             <span class="comment">/* 这里可以处理接收到的字符指针... */</span></span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">else</span> <span class="keyword">if</span>( xHandle == ( QueueSetMemberHandle_t ) xUint32tQueue )</span><br><span class="line">         &#123;</span><br><span class="line">             <span class="comment">/* 对 xQueueSelectFromSet() 的调用返回了接收 uint32_t 类型的队列句柄。从队列中</span></span><br><span class="line"><span class="comment">             读取。已知队列包含数据，因此使用 0 的阻塞时间。 */</span></span><br><span class="line">             xQueueReceive(xUint32tQueue, &amp;ulRecievedValue, <span class="number">0</span> );</span><br><span class="line"></span><br><span class="line">             <span class="comment">/* 接收到的值可以在这里处理... */</span></span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">else</span> <span class="keyword">if</span>( xHandle == ( QueueSetMemberHandle_t ) xBinarySemaphore )</span><br><span class="line">         &#123;</span><br><span class="line">             <span class="comment">/* 对 xQueueSelectFromSet() 的调用返回了二进制信号量的句柄。现在拿旗语。信号量已知</span></span><br><span class="line"><span class="comment">             可用，因此使用 0 的阻塞时间。*/</span></span><br><span class="line">             xSemaphoreTake(xBinarySemaphore, <span class="number">0</span> );</span><br><span class="line"></span><br><span class="line">             <span class="comment">/* 获取信号量时需要的任何处理都可以在这里执行... */</span></span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure><h3 id="邮箱"><a href="#邮箱" class="headerlink" title="邮箱"></a>邮箱</h3><p>这只是仅有单个数据的队列。<br>但是使用不同的函数让数据不会被读完删除，而是只读，写入覆盖这样。</p><h3 id="相关函数-1"><a href="#相关函数-1" class="headerlink" title="相关函数"></a>相关函数</h3><blockquote><p>队列创建函数<br>发送到头或尾的函数<br>接收函数<br>返回队列项目数的函数<br>队列集创建，加入，择取<br>覆写，只读不删函数</p></blockquote><br/><h2 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a><a href="https://github.com/iclite/Mastering-the-FreeRTOS-Real-Time-Kernel-CN/blob/master/ruan-jian-ding-shi-qi-guan-li.md">定时器</a></h2><p>定时器由一个回调函数和定时器实例（包括定时器命令队列，守护进程任务）组成。<br>具体机制是：发出定时器命令（如开启，重置等）到命令队列里面，守护进程任务会检查这个队列，并执行相应的回调函数。<br>守护进程任务的优先级最好设置的高一点，虽然较低也不会影响它执行回调函数，估计是用到了滴答间隔的滴答中断来检查定时器列表。</p><h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><p>可以运行和休眠<br>有单次和周期性定时器<br>定时器有ID来辨识身份<br>可以手动改变周期或者重置</p><h3 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h3><p>底盘任务里判断是否到达指定位置：即定期检查里程误差，就可以用定时器回调和重置的功能</p><h3 id="相关函数-2"><a href="#相关函数-2" class="headerlink" title="相关函数"></a>相关函数</h3><blockquote><p>创建函数<br>开始，停止函数<br>重置或改变周期函数<br>获取滴答计数函数<br>设置ID查询ID函数<br>回调函数</p></blockquote><br/><h2 id="资源管理"><a href="#资源管理" class="headerlink" title="资源管理"></a><a href="https://github.com/iclite/Mastering-the-FreeRTOS-Real-Time-Kernel-CN/blob/master/zi-yuan-guan-li.md">资源管理</a></h2><p>原子操作：一种不想被打断的连续操作，就像开大时外面电话响了，你得完事才出去接吧。<br>专业一点，就是线程安全，访问堆栈上的变量是安全的，但是多个函数都可以访问一个全局&#x2F;静态存储区里的变量是不安全的（static变量）。这个我了解不是很清楚。</p><h3 id="临界区"><a href="#临界区" class="headerlink" title="临界区"></a>临界区</h3><p>基本临界区是由调用宏<code>taskENTER_critical()</code>和<code>taskEXIT_CRITICAL()</code>包围的代码区域，里面存放原子操作。<br><code>vTaskSuspendAll() </code>和<code>xTaskResumeAll()</code>挂起的是调度器，从而禁止任务切换。<br>临界区也有中断版本的，都中断嵌套。</p><h3 id="互斥锁"><a href="#互斥锁" class="headerlink" title="互斥锁"></a>互斥锁</h3><p>也称为二进制信号量，<code>MUTEXES</code>，这个就像绝命毒师里面的话语权抱枕，拿到它的人才可以说话。<br>在<code>xSemaphoreTake()</code>获得互斥锁后，才会执行后面的代码。互斥锁必须给回去。<br>这会发生一个问题，叫优先级反转：高优先级的任务在等待持有互斥锁的低优先级任务。</p><p>死锁和递归互斥锁，后者解决前者，这个我之后再写。</p><h3 id="看门人任务"><a href="#看门人任务" class="headerlink" title="看门人任务"></a>看门人任务</h3><p>这个也可以达到保护资源的目的。只有看门人任务可以直接访问资源，其他人需要通过看门人间接访问资源。可以使用队列来通知看门人任务事件到达。</p><h4 id="滴答钩子函数"><a href="#滴答钩子函数" class="headerlink" title="滴答钩子函数"></a>滴答钩子函数</h4><p>这一节多介绍了滴答钩子函数，调度器在滴答间隔马上执行这个钩子函数。所以必须要快，用ISR版的API函数。</p><h3 id="相关函数-3"><a href="#相关函数-3" class="headerlink" title="相关函数"></a>相关函数</h3><blockquote><p>临界区的两个宏<br>挂起所有和恢复所有函数<br>创建，拿取，返回互斥锁函数<br>滴答钩子函数</p></blockquote><br/><h2 id="中断和信号量"><a href="#中断和信号量" class="headerlink" title="中断和信号量"></a><a href="https://github.com/iclite/Mastering-the-FreeRTOS-Real-Time-Kernel-CN/blob/master/zhong-duan-guan-li.md">中断和信号量</a></h2><p>在中断中使用ISR这种安全的API接口</p><h3 id="中断与任务切换"><a href="#中断与任务切换" class="headerlink" title="中断与任务切换"></a>中断与任务切换</h3><p>任务切换在这个文档里也有一种说法是上下文切换。<br>关于<code>pxHigherPriorityTaskWoken</code>这个参数，它决定了中断里面发生的一些事件（如发送队列）使关联的高优先级任务进入就绪状态后————会不会立马运行。设置这个参数还有些技巧，一开始得是pdFALSE，再变成pdTRUE才可以被读到。<br>这个参数一般在类似<code>xSemaphoreGiveFromISR()</code>的函数中，这个函数在下文会提到。<br><code>portYIELD_FROM_ISR</code>的宏和<code>pxHigherPriorityTaskWoken</code>参数是配合使用的，调用这个宏即可进行任务切换。</p><h3 id="信号量和中断"><a href="#信号量和中断" class="headerlink" title="信号量和中断"></a>信号量和中断</h3><p>延迟中断处理的意思是，因为中断要尽可能短，所以设置一个任务跟在中断屁股后面给它做任务，这就需要结合上一节所说的参数和宏，和信号量<code>Semaphore</code><br>核心思想是，先创造一个二进制信号量；然后在中断那里给出，同时唤醒高优先级任务；这个延时处理任务拿到信号量，进行处理，达到“与中断同步”的效果。</p><h4 id="关于中断的还有好多"><a href="#关于中断的还有好多" class="headerlink" title="关于中断的还有好多"></a>关于中断的还有好多</h4><p>估计一时半会用不到，先不写了。</p><h3 id="相关函数-4"><a href="#相关函数-4" class="headerlink" title="相关函数"></a>相关函数</h3><blockquote><p>一堆</p></blockquote><br/><h2 id="事件组"><a href="#事件组" class="headerlink" title="事件组"></a><a href="https://github.com/iclite/Mastering-the-FreeRTOS-Real-Time-Kernel-CN/blob/master/shi-jian-zu.md">事件组</a></h2><p>特性：可以多个事件组合发生，可以在阻塞状态下等待一个事件或多个</p><h3 id="事件组设置和等待"><a href="#事件组设置和等待" class="headerlink" title="事件组设置和等待"></a>事件组设置和等待</h3><h4 id="读取"><a href="#读取" class="headerlink" title="读取"></a>读取</h4><p>用掩码设置和读取。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/*&quot;事件组中事件位的定义。 */</span><br><span class="line">#define mainFIRST_TASK_BIT  ( 1UL &lt;&lt; 0UL ) /* 事件位0，由任务设置。 */</span><br><span class="line">#define mainSECOND_TASK_BIT ( 1UL &lt;&lt; 1UL ) /* 事件位1，由任务设置。 */</span><br><span class="line">#define mainISR_BIT         ( 1UL &lt;&lt; 2UL ) /* 事件位2，由ISR设置。 */</span><br></pre></td></tr></table></figure><h4 id="等待"><a href="#等待" class="headerlink" title="等待"></a>等待</h4><p>等待时是阻塞的。<br>等待有<code>xWaitForAllBits</code>和<code>xClearOnExit</code>的模式，且可以设置超时时间。</p><h3 id="同步任务"><a href="#同步任务" class="headerlink" title="同步任务"></a>同步任务</h3><p>可以通过事件组来同步多个任务到一个同步点。<br>没细看，以后写。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 电控 </category>
+          
+          <category> FreeRTOS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 学习 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>装ubuntu系统记录</title>
+      <link href="/2024/09/21/%E8%A3%85ubuntu%E7%B3%BB%E7%BB%9F%E8%AE%B0%E5%BD%95/"/>
+      <url>/2024/09/21/%E8%A3%85ubuntu%E7%B3%BB%E7%BB%9F%E8%AE%B0%E5%BD%95/</url>
+      
+        <content type="html"><![CDATA[<p>我有一台破笔记本和能用的台式。这两个设备我来回装系统快十次了。这里简要记录一下，减轻一点痛苦。</p><hr><h2 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h2><p>首先切到root,要不然快结束的时候会报一错。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br></pre></td></tr></table></figure><p>然后把根目录文件压缩到U盘里，除去一些不必要的文件，和挂载U盘的media。cvpzf后面那项是挂载U盘的路径。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar cvpzf /media/ken/desktopBackup/laptop_backup@2024-9-27.tgz --exclude=/proc --exclude=/lost+found --exclude=/mnt --exclude=/sys --exclude=/media --exclude=/tmp --exclude=/run /</span><br></pre></td></tr></table></figure><h2 id="恢复"><a href="#恢复" class="headerlink" title="恢复"></a>恢复</h2><p>还没遇到要回滚的。到时再说。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 视觉 </category>
+          
+          <category> linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 踩坑 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>建站记录</title>
+      <link href="/2024/09/20/%E5%BB%BA%E7%AB%99/"/>
+      <url>/2024/09/20/%E5%BB%BA%E7%AB%99/</url>
+      
+        <content type="html"><![CDATA[<p>早有建站想法，最近趁着中秋，实现了这个想法。<br>一开始看别人博客教程的时候，对建站的过程不明就里。现在初步搭好了，我来回顾一下。</p><hr><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>架设自己的个人网站的思路其实非常简单，从下往上的步骤大概是这样：</p><ul><li>自己先用<a href="https://www.runoob.com/markdown/">markdown</a>写好博客的内容；</li><li>再使用一个框架帮你自动实现网站的架构（像<a href="https://hexo.io/themes/">主题</a>，背景，导航栏，特效等等），这个框架负责把你写的内容呈现出来（到这时自己已经可以在本地预览到自己网站的样子了）；</li><li>网站成型后，考虑的是怎么让别人通过网络来访问你的网站了，其中一个方法是使用Github的<a href="https://pages.github.com/">Pages</a>功能来托管，即把网页文件上传到Github仓库里，别人就可以访问仓库网址看到你的网站了；</li><li>进阶一点的就是架设一个服务器，使用一个好看的域名来登录的网站,就可以摆脱Github来发布，毕竟经常又慢又打不开。</li></ul><h2 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h2><p>框架我所知的有<a href="https://hexo.io/zh-cn/docs/">hexo</a>，WordPress，hugo。<br>hexo和WordPress的教程在csdn都非常多，当时不用hugo是因为找不到一个好看的主题。</p><h2 id="Github托管"><a href="#Github托管" class="headerlink" title="Github托管"></a>Github托管</h2><p>使用Github的pages功能非常方便，只要上传自己博客网页相关的文件，访问用户名.github.io的网站就可以看到了。</p><h2 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h2><p>我用的是阿里云的ECS云服务器，有3个月的免费试用；加上7块钱买了一个域名，解析到我的服务器ip。免费服务器是个坑，后面说。<br>大致步骤是：</p><ul><li>买域名和服务器，在服务器上配置ssh，设置git的钩子，让一键部署的文件可以传到服务器上面。</li><li>然后下载Ngnix和宝塔，在宝塔面板配置域名，设置网站根目录等。</li><li>再就是在阿里云那配个ssl，搞个https，安全一点。</li><li>最后就是icp备案，这个要准备些材料，像朗诵视频，身份证，自拍，纸质承诺书照片等。</li></ul><h2 id="踩坑记录"><a href="#踩坑记录" class="headerlink" title="踩坑记录"></a>踩坑记录</h2><p>踩了n个坑，耽搁了很久：</p><ul><li>域名解析：一开始我是将域名解析到Github Pages那里，但是无论如何也登不上。方法是，先去实名认证。</li><li>hexo的git自动部署功能：_config.yml文件里的deploy那里的repo最好直接用ssh的地址，而非用域名；原因是当你域名没解析好，端口没打开或者设置错了的时候，也能保证传的上去。</li><li>安全组：使用宝塔面板的端口一般是8080，但我的恰好不是，而且安全组里添加了相应端口也没用。原因是安全组要和相应实例关联，意思是我开的服务器，得刷新一下，从实例那里进去打开安全组，编辑即可。</li><li>部署好了访问服务器ip却404：这是宝塔的设置出现问题，配置文件里，listen 80后面要加上default_server，要不然访问时不会自动进这个端口，导致404。这个修改很多教程没框出来，我是靠运气看到的，害。</li><li>阿里云大陆的服务器icp备案：域名死也解析不到我的服务器ip，是没有icp备案的原因。但是我3个月免费试用的服务器不支持icp备案，得买一个。</li><li>不知道为啥icp备案前，添加ssl后网站打不开。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Web </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 踩坑 </tag>
+            
+            <tag> 学习 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2024/09/17/hello-world/"/>
+      <url>/2024/09/17/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p><h3 id="测试图片"><a href="#测试图片" class="headerlink" title="测试图片"></a>测试图片</h3><p>这是我扣的斩服少女里面的字体，排版了下，搞了个图。<br><img src="/images/test.png" width="50%"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Web </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 学习 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>傻瓜卡尔曼调参手册</title>
+      <link href="/2024/08/01/%E5%8D%A1%E5%B0%94%E6%9B%BC%E8%B0%83%E5%8F%82%E6%89%8B%E5%86%8C/"/>
+      <url>/2024/08/01/%E5%8D%A1%E5%B0%94%E6%9B%BC%E8%B0%83%E5%8F%82%E6%89%8B%E5%86%8C/</url>
+      
+        <content type="html"><![CDATA[<p>纪念在深圳湾边上的暑假。</p><hr><h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><ul><li>右手系，拇指食指中指xyz，枪口指向x正方向</li><li><code>/camera result</code>为世界系，上电时根据云台c板位置固定，云台转世界系不动</li><li><code>/camera pos</code>为相机系，随云台运动</li><li><code>robot/mode</code>，1为打福模式其中config数组的第一个为1是大福0为小福，0为打装甲模式</li><li>rqt里开<code>parameter reconfigure</code>，<code>topic monitor</code>，<code>plot</code></li><li><code>theta</code>指的是装甲板法向量与相机x轴的夹角</li></ul><hr><h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="拉新的代码"><a href="#拉新的代码" class="headerlink" title="拉新的代码"></a>拉新的代码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd RM2024-new/</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout main</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull --recurse-submodule</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd src</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git submodule update</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ..</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">colcon build</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source install/setup.bash</span><br></pre></td></tr></table></figure><h3 id="标定"><a href="#标定" class="headerlink" title="标定"></a>标定</h3><p>注意电量在三个及以上</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd scripts/</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./calibration.py</span><br></pre></td></tr></table></figure><ul><li>看不清可以调曝光</li><li>size不满是正常的</li><li>samples数到110张左右为宜</li><li>calibrate按钮只按一次，按完卡住报错正常</li><li>太卡要在bios下开性能模式或相机用usb3</li><li>参数d和k复制到camera.yaml下，若原本就是空的，则ros2 param dump一下</li></ul><h3 id="调偏置"><a href="#调偏置" class="headerlink" title="调偏置"></a>调偏置</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ros2 launch auto_aim auto_aim_launch.py</span><br></pre></td></tr></table></figure><ul><li><code>source</code>一下</li><li>打开rqt，在<code>动态调参数</code>里的ballistic的节点里改<code>yaw_offset</code>和<code>pitch_offset</code></li><li>点头pitch摇头yaw</li><li>要是rqt改不了就用<code>ros2 param get</code>和<code>ros2 param set</code></li></ul><h3 id="调普通卡尔曼"><a href="#调普通卡尔曼" class="headerlink" title="调普通卡尔曼"></a>调普通卡尔曼</h3><ul><li>调<code>Kalman</code>的Q，R和delay，噪声以手感不到云台震动为宜</li></ul><h3 id="调反陀螺卡尔曼"><a href="#调反陀螺卡尔曼" class="headerlink" title="调反陀螺卡尔曼"></a>调反陀螺卡尔曼</h3><ul><li>调x，y和theta的相应的Q和R，x0，y0，r和w是内参有Q无R（优先不调）</li><li>在antitop节点theta和detect result yaw比调，调q_theta，只在参数文件 <code>auto_aim/config</code>车文件夹里的<code>armor_tracker.yaml</code>里面调，不在rqt里或者终端改参数，因为参数只在开始读一次</li><li>优先调theta到w平滑可信（w速度与现实相符，单位rad&#x2F;s），再是调x和y</li><li>最后调<code>anti_top/delay</code></li></ul><h2 id="靶机oled设置"><a href="#靶机oled设置" class="headerlink" title="靶机oled设置"></a>靶机oled设置</h2><ul><li>长按菜单<ul><li>id红蓝</li><li>无限血量</li><li>离线模式</li></ul></li></ul><hr><h2 id="傻哔问题"><a href="#傻哔问题" class="headerlink" title="傻哔问题"></a>傻哔问题</h2><ul><li>联网，确认梯子</li><li>自瞄要开（波轮往下打）</li><li>先<code>pull</code>再<code>submodule update</code></li><li>记得<code>source</code>，不管是build之后还是开rqt之前</li><li>开自瞄乱锁的话就是launch <code>auto_aim</code></li><li>要是rqt里的节点少了，就在auto_aim文件夹下的<code>auto_aim_launch.py</code>文件里加上那些节点</li><li>勾上autoscroll，就会自动滚起来了</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 视觉 </category>
+          
+          <category> 卡尔曼 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 踩坑 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
