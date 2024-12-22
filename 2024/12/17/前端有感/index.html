@@ -159,7 +159,7 @@
       <div class="post-attach">
         <span class="post-pubtime">
           <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
-          2024-12-21 17:03:46
+          2024-12-22 15:45:25
         </span>
         
               <span class="post-categories">
@@ -213,7 +213,7 @@
 <h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><p>只说一些不一样的。</p>
 <h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>变量关键字：const，let，var。后两者在作用域上有区别，推荐使用let，var是老东西了。<br>注意下，不要不加变量关键字，这样会变成全局属性，污染了全局。</p>
 <h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a><a target="_blank" rel="noopener" href="https://www.runoob.com/js/js-datatypes.html">数据类型</a></h3><p>分为基本类型和对象类型，有值得注意的。<br>对象是JS中非常重要的概念，<code>对象是键值对的容器</code>，其中的键值对就是属性（同时也是变量）。方法在里面作为属性来存储，加上<code>()</code>就可以作为函数调用。</p>
-<h3 id="对象类型和类"><a href="#对象类型和类" class="headerlink" title="对象类型和类"></a>对象类型和类</h3><p>一个数据可以是对象类型，如<code>array</code>字符串，意味着它可以拥有属性和方法，就像上面提到的。<br>类别C++，<code>var x = &quot;John&quot;;</code>中：x可以看做是array这个父类的对象，所以它拥有内置属性，如length；也有方法，如charAt()用来返回字符索引。<br>类与对象在JS里面并非C++的类与对象。在JS里所有元素和变量都是<a target="_blank" rel="noopener" href="https://www.runoob.com/js/js-objects.html">对象</a>；而<a target="_blank" rel="noopener" href="https://www.runoob.com/js/js-class-intro.html">类</a>也有一些JS的特性。</p>
+<h3 id="对象类型和类"><a href="#对象类型和类" class="headerlink" title="对象类型和类"></a>对象类型和类</h3><p>一个数据可以是对象类型，如<code>array</code>字符串，意味着它可以拥有属性和方法，就像上面提到的。<br>类别C++，<code>var x = &quot;John&quot;;</code>中：x可以看做是array这个父类的对象，所以它拥有内置属性，如length；也有方法，如charAt()用来返回字符索引。<br>类与对象在JS里面并非C++的类与对象。在JS里所有元素和变量都是<a target="_blank" rel="noopener" href="https://www.runoob.com/js/js-objects.html">对象</a>；而<a target="_blank" rel="noopener" href="https://www.runoob.com/js/js-class-intro.html">类</a>也有一些JS的特性。<br>需分清楚对象，引用，变量的关系。</p>
 <h4 id="函数和作用域"><a href="#函数和作用域" class="headerlink" title="函数和作用域"></a>函数和作用域</h4><p>window对象值得注意，它是一个全局对象。<br>函数的定义、参数、调用也值得关注。<br><strong>闭包</strong>是一个JS的特色概念，值得自己理解。<br>闭包就是能够读取其他函数内部变量的函数。</p>
 <h3 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h3><p>DOM是Doucument Object Model，如：<br><code>var x=document.getElementById(&quot;intro&quot;);</code>就使用了DOM，查了一个元素给x。</p>
 <h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><h4 id="字符串模板"><a href="#字符串模板" class="headerlink" title="字符串模板"></a>字符串模板</h4><h4 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h4><h4 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h4><p>关键区分this指向规则。</p>
@@ -225,7 +225,7 @@
 <li>大括号保存对象。</li>
 <li>方括号保存数组。<br>上面的代码即：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">顶层对象</span><br><span class="line">└── sites (数组)</span><br><span class="line">    ├── 对象 1</span><br><span class="line">    │   ├── name: &quot;Runoob&quot;</span><br><span class="line">    │   └── url: &quot;www.runoob.com&quot;</span><br><span class="line">    ├── 对象 2</span><br><span class="line">    │   ├── name: &quot;Google&quot;</span><br><span class="line">    │   └── url: &quot;www.google.com&quot;</span><br><span class="line">    └── 对象 3</span><br><span class="line">        ├── name: &quot;Taobao&quot;</span><br><span class="line">        └── url: &quot;www.taobao.com&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
 </ul>
-<h4 id="异步编程和AJAX"><a href="#异步编程和AJAX" class="headerlink" title="异步编程和AJAX"></a>异步编程和AJAX</h4><h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><p>大致了解完三剑客，就可以去学习React，ES6是其中一个前置知识，边React边ES6。</p>
+<h4 id="异步编程和AJAX"><a href="#异步编程和AJAX" class="headerlink" title="异步编程和AJAX"></a>异步编程和AJAX</h4><h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><p>大致了解完三剑客，就可以去学习React，ES6是其中一个前置知识，边React边看ES6的细节，如结解构赋值，新的函数特性等等。</p>
 <h2 id="包（yarn）"><a href="#包（yarn）" class="headerlink" title="包（yarn）"></a>包（yarn）</h2><h2 id="关于如何学习"><a href="#关于如何学习" class="headerlink" title="关于如何学习"></a>关于如何学习</h2><p>chatGPT，菜鸟，学习时机，方法等思考</p>
 
       </div>
@@ -242,7 +242,7 @@
           <div class="post-attach">
             <span class="post-pubtime">
               <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
-              2024-12-21 17:03:46
+              2024-12-22 15:45:25
             </span>
             
                   <span class="post-categories">
