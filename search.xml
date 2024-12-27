@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>恶魔人二刷有感</title>
+      <link href="/2024/12/27/%E6%81%B6%E9%AD%94%E4%BA%BA%E4%BA%8C%E5%88%B7%E6%9C%89%E6%84%9F/"/>
+      <url>/2024/12/27/%E6%81%B6%E9%AD%94%E4%BA%BA%E4%BA%8C%E5%88%B7%E6%9C%89%E6%84%9F/</url>
+      
+        <content type="html"><![CDATA[<p>一刷五星,二刷三星。</p><hr><h2 id="第一次"><a href="#第一次" class="headerlink" title="第一次"></a>第一次</h2><p>初中的时候，我第一次看汤浅的恶魔人crybaby。没接触过恶魔人系列，也很少看汤浅的作品，我因为网飞的缘故才知道这个作品的。我那个时候刚学会搭一些技巧，买了个网飞的号，适逢网飞进军日本动画领域，所以看了恶魔城和恶魔人。<br>那个时候觉得超级好看，迷幻，疯狂，色与暴力，大尺度与血腥，角色故事情感充沛，结局发人深省。简直就是我的关于人性，善恶类题材的启蒙之作，动画尾声的末世之战也有后启示录的感觉，是我中意的题材。总之，我那个时候疯狂推荐这个动画。</p><h2 id="第二次"><a href="#第二次" class="headerlink" title="第二次"></a>第二次</h2><p>这次看，我刚做完数字电路课程设计的傻逼数字闹钟，心里空虚，想来些情感充沛的作品填充一下，不知怎么的想到这个作品，隐约记得我的评价很高，加之剧情忘得差不多了，所以想二刷一下。<br>前几集观感挺好的，爽快高速的叙事高速推进毫不拖沓，恰到好处的记忆回闪、角色相关的剧情和独白都勾勒出人物的动机，我看爽了，忘记了午睡。<br>但是结尾巨拉胯，简单的正邪、善恶的人性讨论，用恶魔都比人有人性激发感情，再安排上两个美树相继惨死，虽然情感冲击有了，但是有情却无理，没有那种兼具情绪高潮、戏剧冲突和思想矛盾的安排，反之，剧情安排和主题思辨落入俗套。<br>当我意识到这些的时候，之前癫狂的作画，本来是一个长板，在失去一个相对合理的剧情支撑之后，形式脱离内容，相当无力；我想起那些毫不吝啬，劈头盖脸的色色元素，极度猎奇和对小朋友不适的血腥场面，顿觉苍白无力，不过如此，浮于表面。对了，那个带感的说唱，也不知有什么具体作用。</p><h3 id="二刷的困境"><a href="#二刷的困境" class="headerlink" title="二刷的困境"></a>二刷的困境</h3><p>我很少二刷一些作品。大部分二刷之后，不仅破除了童年的记忆光环，还把小时候朦胧而幸福的观影经历和连带的记忆给扬了。比如说钢铁侠1-3的系列承载了我对这个角色的喜爱，和看到马克系列的兴奋和初心，二刷1-3，觉得剧情真的很一般，找不回小时候目不转睛和兴奋好几天的感觉了。<br>但是也有些不一样的，指环王二刷，还有的震撼的，可以深入一些角色的内心，更好见证角色成长的弧光，而且对中土名景点如数家珍。<br>我好奇的是，为什么二刷作品之后，评价总是不如一刷呢。作品肯定有原因的，足够优秀的作品不拍n刷。也有一个情况，头一次接触一个题材总有新鲜感，熟悉一部分剧作套路和主题思考之后，总结出一个属于自己的文娱教育旅途的范式和原型，就对一些事情祛魅了。<br>那还有没有其他原因呢。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 书影音 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 有感 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>前端有感</title>
       <link href="/2024/12/17/%E5%89%8D%E7%AB%AF%E6%9C%89%E6%84%9F/"/>
       <url>/2024/12/17/%E5%89%8D%E7%AB%AF%E6%9C%89%E6%84%9F/</url>
@@ -35,9 +60,21 @@
       <link href="/2024/12/12/po33%E7%8E%A9%E8%80%8D%E8%AE%B0%E5%BD%95/"/>
       <url>/2024/12/12/po33%E7%8E%A9%E8%80%8D%E8%AE%B0%E5%BD%95/</url>
       
-        <content type="html"><![CDATA[<p>很好玩的计算器。</p><hr><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><p>这是官方的<a href="https://teenage.engineering/guides/po-33/en">PO33 guide</a>。<br>我这份玩耍记录涵盖了官方的教程和一些自己的心得玩法。</p><h3 id="关于旋律和鼓组（melodic-and-drum）"><a href="#关于旋律和鼓组（melodic-and-drum）" class="headerlink" title="关于旋律和鼓组（melodic and drum）"></a>关于旋律和鼓组（melodic and drum）</h3><p>PO33有16个槽位，分为旋律组和鼓组，各占8个槽位。<br>按住<strong>sound</strong>，可以观察到有key亮起，闪烁代表当前选中的sound，不亮的代表该槽位没有sound。<br>想要选中不同sound来预览的话，按住<strong>sound</strong>再按下目标<strong>key</strong>即可。对于鼓组，按住<strong>sound</strong>再连按目标<strong>key</strong>可以听完所有切分的鼓的音色。<br>如将采样录入到旋律组，按下<strong>key</strong>1-16会播放录入的sound<u>特定片段</u>的不同音高。（关于这个特定片段后米娜会讲到）<br>而将一段采样录入鼓组的话，PO33会自动将其chop（切）成很多片，每个<strong>key</strong>链接这整段sound的其中一个<u>小片段</u>。</p><h3 id="删除一些东西"><a href="#删除一些东西" class="headerlink" title="删除一些东西"></a>删除一些东西</h3><p>删之前先播放听一下，确认删除内容。<br>删除sound：先选中一个sound，按住<strong>record</strong>和<strong>sound</strong>，即可删除选中sound。<br>删除pattern：同理选中一个pattern，再按住<strong>record</strong>和<strong>pattern</strong>即可删除所选。</p><h3 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h3><h3 id="录音（recording）"><a href="#录音（recording）" class="headerlink" title="录音（recording）"></a>录音（recording）</h3><p>按住<strong>record</strong>和<strong>key</strong>1-16（你想录入的槽位），即可开始录音，松开按键结束。<br>PO33总共支持最多录40秒的内容。录的时候，剩余秒数会显示在LCD屏幕上。<br>外置音源通过PO33左边的音频口输入。</p><h3 id="修音（tweak-the-sound）"><a href="#修音（tweak-the-sound）" class="headerlink" title="修音（tweak the sound）"></a>修音（tweak the sound）</h3><p>选择一个声音</p><h3 id="编曲（playing）"><a href="#编曲（playing）" class="headerlink" title="编曲（playing）"></a>编曲（playing）</h3><p>PO33采用音序器（sequencer）来记录谱面。也可以在整个</p><h2 id="进阶一点的"><a href="#进阶一点的" class="headerlink" title="进阶一点的"></a>进阶一点的</h2><h3 id="滚奏"><a href="#滚奏" class="headerlink" title="滚奏"></a>滚奏</h3><h2 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h2><h3 id="恢复出厂设置（factory-reset）"><a href="#恢复出厂设置（factory-reset）" class="headerlink" title="恢复出厂设置（factory reset）"></a>恢复出厂设置（factory reset）</h3><p>拆掉电池，按住<strong>pattern</strong>和<strong>write</strong>键，然后装上电池。<br>就可以得到出厂预设的8个melodic和8个drum。</p><h3 id="设置闹钟（alarm-clock）"><a href="#设置闹钟（alarm-clock）" class="headerlink" title="设置闹钟（alarm clock）"></a>设置闹钟（alarm clock）</h3><p>按下<strong>sound</strong>和<strong>pattern</strong>键，旋钮A设置时，旋钮B设置分，然后按<strong>key</strong>1-16设置alarm的pattern。<br>将旋钮A拧到底即可关闭闹钟。</p>]]></content>
+        <content type="html"><![CDATA[<p>很好玩的计算器。</p><hr><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><p>这是官方的<a href="https://teenage.engineering/guides/po-33/en">PO33 guide</a>。<br>可以参考B站炸鱼块up的<a href="https://www.bilibili.com/video/BV1eJ41137ad/?share_source=copy_web&vd_source=28215cea640c5a10ba24bb123648f83d">po33教程</a><br>还有一些进阶教程:<br><a href="https://brianhilmers.com/gear/po/ko.php">拓展文档</a><br><a href="https://github.com/smaudd/PO-33">交互式指南Github</a><br><a href="https://pocketoperations.com/pocket-operator-cheatsheets.html">Cheat Sheet</a><br><a href="https://op-forums.com/t/po-33-cheat-sheet-and-resources/19514">论坛</a></p><p>我这份玩耍记录涵盖了官方的教程和一些自己的心得玩法。</p><h3 id="关于旋律和鼓组（melodic-and-drum）"><a href="#关于旋律和鼓组（melodic-and-drum）" class="headerlink" title="关于旋律和鼓组（melodic and drum）"></a>关于旋律和鼓组（melodic and drum）</h3><p>PO33有16个槽位，分为旋律组和鼓组，各占8个槽位。<br>按住<strong>sound</strong>，可以观察到有key亮起，闪烁代表当前选中的sound，不亮的代表该槽位没有sound。<br>想要选中不同sound来预览的话，按住<strong>sound</strong>再按下目标<strong>key</strong>即可。对于鼓组，按住<strong>sound</strong>再连按目标<strong>key</strong>可以听完所有切分的鼓的音色。<br>如将采样录入到旋律组，按下<strong>key</strong>1-16会播放录入的sound<u>特定片段</u>的不同音高。（关于这个特定片段后面会讲到）<br>而将一段采样录入鼓组的话，PO33会自动将其chop（切）成很多片，每个<strong>key</strong>链接这整段sound的其中一个<u>小片段</u>。</p><h3 id="删除一些东西"><a href="#删除一些东西" class="headerlink" title="删除一些东西"></a>删除一些东西</h3><p>删之前先播放听一下，确认删除内容。<br>删除sound：先选中一个sound，按住<strong>record</strong>和<strong>sound</strong>，即可删除选中sound。<br>删除pattern：同理选中一个pattern，再按住<strong>record</strong>和<strong>pattern</strong>即可删除所选。</p><h3 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h3><h3 id="录音（recording）"><a href="#录音（recording）" class="headerlink" title="录音（recording）"></a>录音（recording）</h3><p>按住<strong>record</strong>和<strong>key</strong>1-16（你想录入的槽位），即可开始录音，松开按键结束。<br>PO33总共支持最多录40秒的内容。录的时候，剩余秒数会显示在LCD屏幕上。<br>外置音源通过PO33左边的音频口输入。</p><h3 id="修音（tweak-the-sound）"><a href="#修音（tweak-the-sound）" class="headerlink" title="修音（tweak the sound）"></a>修音（tweak the sound）</h3><p>选择一个声音</p><h3 id="编曲（playing）"><a href="#编曲（playing）" class="headerlink" title="编曲（playing）"></a>编曲（playing）</h3><p>PO33采用音序器（sequencer）来记录谱面。也可以在整个</p><h2 id="进阶一点的"><a href="#进阶一点的" class="headerlink" title="进阶一点的"></a>进阶一点的</h2><h3 id="滚奏"><a href="#滚奏" class="headerlink" title="滚奏"></a>滚奏</h3><p>在write模式下，按住谱面其中一个位置，在按<strong>bpm</strong>，可设置滚奏速度，按一下加一个速度。</p><h2 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h2><h3 id="恢复出厂设置（factory-reset）"><a href="#恢复出厂设置（factory-reset）" class="headerlink" title="恢复出厂设置（factory reset）"></a>恢复出厂设置（factory reset）</h3><p>拆掉电池，按住<strong>pattern</strong>和<strong>write</strong>键，然后装上电池。<br>就可以得到出厂预设的8个melodic和8个drum。</p><h3 id="设置闹钟（alarm-clock）"><a href="#设置闹钟（alarm-clock）" class="headerlink" title="设置闹钟（alarm clock）"></a>设置闹钟（alarm clock）</h3><p>按下<strong>sound</strong>和<strong>pattern</strong>键，旋钮A设置时，旋钮B设置分，然后按<strong>key</strong>1-16设置alarm的pattern。<br>将旋钮A拧到底即可关闭闹钟。</p>]]></content>
       
       
+      <categories>
+          
+          <category> 书影音 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 有感 </tag>
+            
+        </tags>
       
     </entry>
     
